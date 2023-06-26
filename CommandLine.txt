@@ -1,0 +1,273 @@
+# Extract all .ab1 files
+
+##############
+# Prepare data
+##############
+
+for i in Data/Plate*/*.ab1; do
+ cp $i ./; done
+ 
+for i in Data/"Test Batch"/*.ab1; do
+ cp "$i" ./; done
+ 
+#######################################
+# Convert data to Fastq with Biopython
+#######################################
+
+python3
+import os
+from Bio import SeqIO
+
+# Define the input and output directory paths
+input_dir = "/Users/davidgold/Desktop/Rockfish"
+output_dir = "/Users/davidgold/Desktop/Rockfish"
+
+# Define the file format to read
+file_format = "abi"
+
+# Loop through all ABI files in the input directory
+for file_name in os.listdir(input_dir):
+    if file_name.endswith(".ab1"):
+        # Construct the input and output file paths
+        input_file = os.path.join(input_dir, file_name)
+        output_file = os.path.join(output_dir, "{}.fastq".format(os.path.splitext(file_name)[0]))
+        # Open the input ABI file and convert it to Fastq format using SeqIO.write() function
+        with open(input_file, "rb") as handle:
+            SeqIO.write(SeqIO.parse(handle, file_format), output_file, "fastq")
+
+# Exit program
+quit()
+
+# Clean up
+rm *ab1
+
+###############################
+# Clean reads with Trimmomatic
+###############################
+
+# Concatenate fastq files
+cat *GluRF2.fastq > Rockfish_Forward_Reads.fq
+cat *CB3RF2.fastq > Rockfish_Reverse_Reads.fq
+# Reverse the reverse reads with seqtk
+seqtk seq -r Rockfish_Reverse_Reads.fq > Rockfish_Reverse_Reads.reversed.fq
+# Create final list
+cat Rockfish_Forward_Reads.fq Rockfish_Reverse_Reads.reversed.fq > Rockfish_Reads.fq
+
+# Examine "Rockfish_Reads.fq" in FastQC
+	# remove reads with a quality score below 20
+	
+trimmomatic SE -phred33 Rockfish_Reads.fq \
+Rockfish_Reads.cleaned.fq \
+HEADCROP:10 LEADING:20 TRAILING:20 MINLEN:50
+
+# Results:
+	# Input Reads: 924 Surviving: 409 (44.26%) Dropped: 515 (55.74%)	#123 unique IDs
+
+# Convert to fasta with seqtk
+seqtk seq -a Rockfish_Reads.cleaned.fq > Rockfish_Reads.cleaned.fasta
+
+
+# Clean up
+rm *fastq
+rm *.fq
+
+################################################
+# Collect cytB reads from known species in NCBI
+################################################
+
+mkdir temp
+
+python3
+from Bio import Entrez, SeqIO
+
+# Provide your email address to NCBI
+Entrez.email = "dgold@ucdavis.edu"
+
+# Specify the list of species
+species_list = [
+    "Artedius corallinus",
+    "Artedius harringtoni",
+    "Artedius lateralis",
+    "Ophiodon elongatus",
+    "Scorpaena guttata",
+    "Sebastes aleutianus",
+    "Sebastes alutus",
+    "Sebastes atrovirens",
+    "Sebastes auriculatus",
+    "Sebastes aurora",
+    "Sebastes babcocki",
+    "Sebastes borealis",
+    "Sebastes brevispinis",
+    "Sebastes carnatus",
+    "Sebastes caurinus",
+    "Sebastes chlorostictus",
+    "Sebastes chrysomelas",
+    "Sebastes ciliatus",
+    "Sebastes constellatus",
+    "Sebastes crameri",
+    "Sebastes dallii",
+    "Sebastes diaconus",
+    "Sebastes diploproa",
+    "Sebastes elongatus",
+    "Sebastes emphaeus",
+    "Sebastes ensifer",
+    "Sebastes entomelas",
+    "Sebastes eos",
+    "Sebastes flavidus",
+    "Sebastes gilli",
+    "Sebastes goodei",
+    "Sebastes helvomaculatus",
+    "Sebastes hopkinsi",
+    "Sebastes jordani",
+    "Sebastes lentiginosus",
+    "Sebastes levis",
+    "Sebastes macdonaldi",
+    "Sebastes maliger",
+    "Sebastes melanops",
+    "Sebastes melanostictus",
+    "Sebastes melanostomus",
+    "Sebastes miniatus",
+    "Sebastes mystinus",
+    "Sebastes nebulosus",
+    "Sebastes nigrocinctus",
+    "Sebastes ovalis",
+    "Sebastes paucispinis",
+    "Sebastes phillipsi",
+    "Sebastes pinniger",
+    "Sebastes proriger",
+    "Sebastes rastrelliger",
+    "Sebastes reedi",
+    "Sebastes rosaceus",
+    "Sebastes rosenblatti",
+    "Sebastes ruberrimus",
+    "Sebastes rubrivinctus",
+    "Sebastes rufus",
+    "Sebastes saxicola",
+    "Sebastes semicinctus",
+    "Sebastes serranoides",
+    "Sebastes serriceps",
+    "Sebastes umbrosus",
+    "Sebastes variegatus",
+    "Sebastes wilsoni",
+    "Sebastes zacentrus",
+]
+
+# Specify the output directory to save the gene sequences
+output_dir = "temp"
+
+# Iterate over the species list
+for species_name in species_list:
+    print(f"Retrieving CytB gene sequence for {species_name}...")
+    
+    try:
+        # Search NCBI Nucleotide database for the species and CytB gene
+        search_term = f"{species_name}[Organism] AND cytb[gene]"
+        handle = Entrez.esearch(db="nucleotide", term=search_term, retmax=1)
+        record = Entrez.read(handle)
+        handle.close()
+        
+        # Retrieve the sequence for the top result
+        if record["IdList"]:
+            sequence_id = record["IdList"][0]
+            handle = Entrez.efetch(db="nucleotide", id=sequence_id, rettype="fasta", retmode="text")
+            sequence = SeqIO.read(handle, "fasta")
+            handle.close()
+            
+            # Save the sequence to a FASTA file
+            file_path = f"{output_dir}/{species_name.replace(' ', '_')}.fasta"
+            SeqIO.write(sequence, file_path, "fasta")
+            
+            print(f"CytB gene sequence for {species_name} retrieved and saved.")
+            print("")
+        else:
+            print(f"No CytB gene sequence found for {species_name}.")
+            print("")
+    
+    except Exception as e:
+        print(f"An error occurred while retrieving CytB gene sequence for {species_name}:")
+        print(str(e))
+        print("")
+        
+# Exit Python
+quit()
+
+########################
+# Modify transcript IDs
+########################
+
+cd temp
+
+# Delete all info in header after first space
+sed -i '' '1s/ .*//' *.fasta
+
+# Add species name to headers
+for file in *.fasta; do
+  filename=$(basename "$file")
+  filename="${filename%.*}"
+  sed -i '' "1s/^>/>$filename-/" "$file"
+done
+
+# collect sequences and cleanup
+cat *.fasta > Known_Seqs.fasta
+mv Known_Seqs.fasta ../Known_Seqs.fasta
+cd ../
+cat Known_Seqs.fasta Rockfish_Reads.cleaned.fasta > All_Reads.fasta
+
+# Clean up
+rm -r temp
+
+###################################################
+# Identify CytB sequences using BLAST and SAMTOOLS
+###################################################
+ 
+# Extract the first Sebastes sequence (150-GluRF2) as a query
+samtools faidx All_Reads.fasta 150-GluRF2 > query.fasta
+
+# Make BLAST database
+makeblastdb -in All_Reads.fasta -dbtype nucl -out All_Reads
+# Perform BLAST search
+blastn -query query.fasta -db All_Reads -outfmt 6 -out All_Reads.BLAST_hits.txt
+# Extract coordiantes from BLAST data
+cut -f 2,9,10 -d $'\t' All_Reads.BLAST_hits.txt > All_Reads.BLAST_coordinates.txt
+
+# Some NCBI sequences are in reverse; need to fix that:
+	# Get list of sequences that are in reverse (coordinate 2 is higher than coordinate 1)
+awk -F $'\t' '$2 > $3 {print $1}'  All_Reads.BLAST_coordinates.txt > temp.need_reversing.txt
+
+# Extract sequences that need reversing
+xargs samtools faidx All_Reads.fasta < temp.need_reversing.txt > temp.need_reversing.fasta
+
+# Reverse the extracted sequences with seqkit
+seqkit seq -r temp.need_reversing.fasta > temp.reversed.fasta
+
+# Create new fasta file with reversed reads removed
+seqkit grep -v -f temp.need_reversing.txt All_Reads.fasta > temp.other_reads.fasta
+
+# Create final dataset
+cat temp.other_reads.fasta temp.reversed.fasta > Rockfish_Vetted_Seqs.fasta
+
+# Clean up 
+rm All_Reads*
+rm temp*
+
+# Extract 
+# Align reads and make initial tree
+
+############################
+# Extract conserved regions
+############################
+
+# Make BLAST database
+makeblastdb -in Rockfish_Vetted_Seqs.fasta -dbtype nucl -out temp1
+# Perform BLAST search
+blastn -query query.fasta -db temp1 -outfmt 6 -out temp2.txt
+# Extract coordiantes from BLAST data
+cut -f 2,9,10 -d $'\t' temp2.txt | awk 'BEGIN{OFS="\t"}{$1="\""$1"\""; print}' | sed -e 's/\t/:/' -e 's/\t/-/' | awk 'BEGIN{OFS="\t"}{if($2 > $3) {temp=$2; $2=$3; $3=temp} print}' > temp3.txt
+# Extract coordinates from fasta file using samtools
+xargs samtools faidx Rockfish_Vetted_Seqs.fasta < temp3.txt > Rockfish_Vetted_Seqs.Domains.fasta
+# Clean up 
+rm temp*
+
+muscle -in Rockfish_Vetted_Seqs.Domains.fasta -out Rockfish_Vetted_Seqs.Domains.Alignment.fasta
+iqtree -s Rockfish_Vetted_Seqs.Domains.Alignment.fasta -alrt 1000 -bb 1000 
+

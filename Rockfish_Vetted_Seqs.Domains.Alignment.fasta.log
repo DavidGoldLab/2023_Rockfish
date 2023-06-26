@@ -1,0 +1,958 @@
+IQ-TREE multicore version 1.6.12 for Mac OS X 64-bit built Aug 15 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    Davids-MacBook-Air-9.local (AVX2, FMA3, 8 GB RAM)
+Command: iqtree -s Rockfish_Vetted_Seqs.Domains.Alignment.fasta -alrt 1000 -bb 1000
+Seed:    653926 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Fri Jun 23 20:44:35 2023
+Kernel:  AVX+FMA - 1 threads (4 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 4 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading alignment file Rockfish_Vetted_Seqs.Domains.Alignment.fasta ... Fasta format detected
+Alignment most likely contains DNA/RNA sequences
+WARNING: 11 sites contain only gaps or ambiguous characters.
+Alignment has 281 sequences with 862 columns, 739 distinct patterns
+239 parsimony-informative, 231 singleton sites, 392 constant sites
+WARNING: Some sequence names are changed as follows:
+Artedius_harringtoni-LC546701.1:2-790 -> Artedius_harringtoni-LC546701.1_2-790
+4A1-GluRF2:2-639 -> 4A1-GluRF2_2-639
+4G6-GluRF2:49-659 -> 4G6-GluRF2_49-659
+3H6-GluRF2:209-718 -> 3H6-GluRF2_209-718
+4H11-GluRF2:90-690 -> 4H11-GluRF2_90-690
+5A3-GluRF2:163-274 -> 5A3-GluRF2_163-274
+3A8-GluRF2:144-708 -> 3A8-GluRF2_144-708
+3B11-CB3RF2:50-659 -> 3B11-CB3RF2_50-659
+3B11-GluRF2:141-748 -> 3B11-GluRF2_141-748
+3E9-GluRF2:123-788 -> 3E9-GluRF2_123-788
+1E11-GluRF2:103-745 -> 1E11-GluRF2_103-745
+1E11-CB3RF2:49-710 -> 1E11-CB3RF2_49-710
+1A9-GluRF2:181-789 -> 1A9-GluRF2_181-789
+3A7-GluRF2:23-765 -> 3A7-GluRF2_23-765
+Sebastes_paucispinis-MK841520.1:41-826 -> Sebastes_paucispinis-MK841520.1_41-826
+3A11-GluRF2:7-780 -> 3A11-GluRF2_7-780
+3A11-CB3RF2:72-774 -> 3A11-CB3RF2_72-774
+4A11-GluRF2:17-733 -> 4A11-GluRF2_17-733
+4D10-CB3RF2:81-605 -> 4D10-CB3RF2_81-605
+4D10-GluRF2:144-766 -> 4D10-GluRF2_144-766
+3B6-GluRF2:31-782 -> 3B6-GluRF2_31-782
+352-GluRF2:7-784 -> 352-GluRF2_7-784
+Sebastes_caurinus-NC_066933.1:14409-15211 -> Sebastes_caurinus-NC_066933.1_14409-15211
+4A12-GluRF2:38-799 -> 4A12-GluRF2_38-799
+Sebastes_maliger-NC_056782.1:14409-15211 -> Sebastes_maliger-NC_056782.1_14409-15211
+4A12-CB3RF2:45-802 -> 4A12-CB3RF2_45-802
+4F10-CB3RF2:43-791 -> 4F10-CB3RF2_43-791
+3H12-GluRF2:2-783 -> 3H12-GluRF2_2-783
+4F10-GluRF2:20-787 -> 4F10-GluRF2_20-787
+2G10-GluRF2:12-774 -> 2G10-GluRF2_12-774
+2G10-CB3RF2:36-779 -> 2G10-CB3RF2_36-779
+600-GluRF2:17-784 -> 600-GluRF2_17-784
+Sebastes_atrovirens-AY582088.1:29-396 -> Sebastes_atrovirens-AY582088.1_29-396
+3B5-GluRF2:58-777 -> 3B5-GluRF2_58-777
+637-GluRF2:19-780 -> 637-GluRF2_19-780
+4B12-GluRF2:26-788 -> 4B12-GluRF2_26-788
+5A5-GluRF2:65-792 -> 5A5-GluRF2_65-792
+5A5-CB3RF2:34-733 -> 5A5-CB3RF2_34-733
+3A12-GluRF2:93-810 -> 3A12-GluRF2_93-810
+4B12-CB3RF2:41-762 -> 4B12-CB3RF2_41-762
+5A8-GluRF2:4-785 -> 5A8-GluRF2_4-785
+5A8-CB3RF2:41-789 -> 5A8-CB3RF2_41-789
+2G9-GluRF2:20-783 -> 2G9-GluRF2_20-783
+2G12-GluRF2:25-773 -> 2G12-GluRF2_25-773
+2G12-CB3RF2:39-753 -> 2G12-CB3RF2_39-753
+2G9-CB3RF2:41-762 -> 2G9-CB3RF2_41-762
+2H3-CB3RF2:38-768 -> 2H3-CB3RF2_38-768
+4G2-CB3RF2:47-785 -> 4G2-CB3RF2_47-785
+4F9-CB3RF2:47-799 -> 4F9-CB3RF2_47-799
+4F9-GluRF2:13-781 -> 4F9-GluRF2_13-781
+2H3-GluRF2:21-792 -> 2H3-GluRF2_21-792
+4G2-GluRF2:1-780 -> 4G2-GluRF2_1-780
+3B4-GluRF2:95-786 -> 3B4-GluRF2_95-786
+4A10-GluRF2:42-761 -> 4A10-GluRF2_42-761
+3B4-CB3RF2:59-683 -> 3B4-CB3RF2_59-683
+4A5-GluRF2:20-777 -> 4A5-GluRF2_20-777
+3B7-CB3RF2:47-740 -> 3B7-CB3RF2_47-740
+2G1-GluRF2:70-796 -> 2G1-GluRF2_70-796
+2G1-CB3RF2:47-707 -> 2G1-CB3RF2_47-707
+4E10-CB3RF2:51-654 -> 4E10-CB3RF2_51-654
+3B3-CB3RF2:54-808 -> 3B3-CB3RF2_54-808
+3B2-GluRF2:9-776 -> 3B2-GluRF2_9-776
+3B3-GluRF2:11-773 -> 3B3-GluRF2_11-773
+3B2-CB3RF2:48-791 -> 3B2-CB3RF2_48-791
+4F12-GluRF2:1-784 -> 4F12-GluRF2_1-784
+4F12-CB3RF2:44-799 -> 4F12-CB3RF2_44-799
+4H9-CB3RF2:41-798 -> 4H9-CB3RF2_41-798
+2G4-CB3RF2:38-768 -> 2G4-CB3RF2_38-768
+351-GluRF2:1-791 -> 351-GluRF2_1-791
+2G4-GluRF2:19-780 -> 2G4-GluRF2_19-780
+3B7-GluRF2:33-789 -> 3B7-GluRF2_33-789
+4G3-CB3RF2:41-798 -> 4G3-CB3RF2_41-798
+4H9-GluRF2:1-783 -> 4H9-GluRF2_1-783
+4G3-GluRF2:1-783 -> 4G3-GluRF2_1-783
+4F3-GluRF2:6-788 -> 4F3-GluRF2_6-788
+4F3-CB3RF2:41-795 -> 4F3-CB3RF2_41-795
+4E10-GluRF2:96-785 -> 4E10-GluRF2_96-785
+4A5-CB3RF2:45-803 -> 4A5-CB3RF2_45-803
+3B9-CB3RF2:42-791 -> 3B9-CB3RF2_42-791
+4A2-GluRF2:4-771 -> 4A2-GluRF2_4-771
+4F5-GluRF2:3-791 -> 4F5-GluRF2_3-791
+4G5-GluRF2:3-785 -> 4G5-GluRF2_3-785
+4F4-GluRF2:1-783 -> 4F4-GluRF2_1-783
+3B9-GluRF2:3-785 -> 3B9-GluRF2_3-785
+4B1-GluRF2:7-784 -> 4B1-GluRF2_7-784
+4B1-CB3RF2:42-800 -> 4B1-CB3RF2_42-800
+4A10-CB3RF2:42-800 -> 4A10-CB3RF2_42-800
+4G5-CB3RF2:45-799 -> 4G5-CB3RF2_45-799
+4F5-CB3RF2:44-797 -> 4F5-CB3RF2_44-797
+4F4-CB3RF2:44-795 -> 4F4-CB3RF2_44-795
+4A2-CB3RF2:42-782 -> 4A2-CB3RF2_42-782
+Sebastes_auriculatus-OM140696.1:1-508 -> Sebastes_auriculatus-OM140696.1_1-508
+Sebastes_ciliatus-NC_060709.1:14407-15210 -> Sebastes_ciliatus-NC_060709.1_14407-15210
+Sebastes_crameri-OM140814.1:24-586 -> Sebastes_crameri-OM140814.1_24-586
+Sebastes_variegatus-OM141008.1:1-486 -> Sebastes_variegatus-OM141008.1_1-486
+Sebastes_ruberrimus-MZ931258.1:3-143 -> Sebastes_ruberrimus-MZ931258.1_3-143
+2E8-CB3RF2:49-752 -> 2E8-CB3RF2_49-752
+5C7-CB3RF2:42-799 -> 5C7-CB3RF2_42-799
+5C7-GluRF2:13-786 -> 5C7-GluRF2_13-786
+2E8-GluRF2:50-797 -> 2E8-GluRF2_50-797
+Sebastes_goodei-OM140810.1:25-584 -> Sebastes_goodei-OM140810.1_25-584
+Sebastes_semicinctus-MK858223.1:48-821 -> Sebastes_semicinctus-MK858223.1_48-821
+3D10-GluRF2:9-724 -> 3D10-GluRF2_9-724
+2D12-CB3RF2:52-729 -> 2D12-CB3RF2_52-729
+2F7-GluRF2:44-781 -> 2F7-GluRF2_44-781
+3G7-GluRF2:67-777 -> 3G7-GluRF2_67-777
+3F10-GluRF2:67-727 -> 3F10-GluRF2_67-727
+4A4-GluRF2:16-793 -> 4A4-GluRF2_16-793
+153-GluRF2:24-792 -> 153-GluRF2_24-792
+2E7-GluRF2:210-798 -> 2E7-GluRF2_210-798
+2D12-GluRF2:23-796 -> 2D12-GluRF2_23-796
+3D11-GluRF2:137-783 -> 3D11-GluRF2_137-783
+2F8-GluRF2:84-796 -> 2F8-GluRF2_84-796
+2F8-CB3RF2:40-718 -> 2F8-CB3RF2_40-718
+4A4-CB3RF2:50-799 -> 4A4-CB3RF2_50-799
+2F10-GluRF2:90-798 -> 2F10-GluRF2_90-798
+2H5-GluRF2:65-790 -> 2H5-GluRF2_65-790
+3F12-GluRF2:14-787 -> 3F12-GluRF2_14-787
+2G8-GluRF2:17-784 -> 2G8-GluRF2_17-784
+3G12-GluRF2:15-783 -> 3G12-GluRF2_15-783
+2H8-GluRF2:6-792 -> 2H8-GluRF2_6-792
+2H1-GluRF2:14-784 -> 2H1-GluRF2_14-784
+2H2-GluRF2:8-775 -> 2H2-GluRF2_8-775
+2F12-GluRF2:29-790 -> 2F12-GluRF2_29-790
+2G11-GluRF2:1-758 -> 2G11-GluRF2_1-758
+2H10-GluRF2:8-796 -> 2H10-GluRF2_8-796
+3F12-CB3RF2:42-784 -> 3F12-CB3RF2_42-784
+3F11-CB3RF2:50-773 -> 3F11-CB3RF2_50-773
+150-CB3RF2:53-744 -> 150-CB3RF2_53-744
+Sebastes_jordani-OM140805.1:24-586 -> Sebastes_jordani-OM140805.1_24-586
+4B2-GluRF2:17-797 -> 4B2-GluRF2_17-797
+3F7-GluRF2:6-791 -> 3F7-GluRF2_6-791
+3G1-GluRF2:12-800 -> 3G1-GluRF2_12-800
+3G3-GluRF2:1-784 -> 3G3-GluRF2_1-784
+2H1-CB3RF2:37-782 -> 2H1-CB3RF2_37-782
+2G8-CB3RF2:36-786 -> 2G8-CB3RF2_36-786
+3F9-CB3RF2:44-797 -> 3F9-CB3RF2_44-797
+4B2-CB3RF2:44-786 -> 4B2-CB3RF2_44-786
+3F7-CB3RF2:45-781 -> 3F7-CB3RF2_45-781
+3G3-CB3RF2:42-795 -> 3G3-CB3RF2_42-795
+2H10-CB3RF2:39-789 -> 2H10-CB3RF2_39-789
+3G1-CB3RF2:50-803 -> 3G1-CB3RF2_50-803
+2H2-CB3RF2:42-789 -> 2H2-CB3RF2_42-789
+2H4-GluRF2:57-783 -> 2H4-GluRF2_57-783
+2G11-CB3RF2:86-775 -> 2G11-CB3RF2_86-775
+152-GluRF2:13-743 -> 152-GluRF2_13-743
+Sebastes_mystinus-MF573897.1:5-757 -> Sebastes_mystinus-MF573897.1_5-757
+Sebastes_entomelas-OM140817.1:25-586 -> Sebastes_entomelas-OM140817.1_25-586
+4A6-CB3RF2:50-559 -> 4A6-CB3RF2_50-559
+504-CB3RF2:57-817 -> 504-CB3RF2_57-817
+4A6-GluRF2:136-736 -> 4A6-GluRF2_136-736
+507-CB3RF2:57-813 -> 507-CB3RF2_57-813
+350-GluRF2:25-806 -> 350-GluRF2_25-806
+505-CB3RF2:57-817 -> 505-CB3RF2_57-817
+4H3-GluRF2:18-779 -> 4H3-GluRF2_18-779
+4H2-CB3RF2:37-785 -> 4H2-CB3RF2_37-785
+4B6-GluRF2:20-785 -> 4B6-GluRF2_20-785
+2E2-CB3RF2:53-782 -> 2E2-CB3RF2_53-782
+4G1-GluRF2:80-783 -> 4G1-GluRF2_80-783
+3A6-CB3RF2:51-770 -> 3A6-CB3RF2_51-770
+506-CB3RF2:52-812 -> 506-CB3RF2_52-812
+4C8-GluRF2:19-793 -> 4C8-GluRF2_19-793
+506-GluRF2:16-805 -> 506-GluRF2_16-805
+507-GluRF2:3-793 -> 507-GluRF2_3-793
+4B6-CB3RF2:41-801 -> 4B6-CB3RF2_41-801
+4C4-CB3RF2:42-788 -> 4C4-CB3RF2_42-788
+4C8-CB3RF2:40-793 -> 4C8-CB3RF2_40-793
+2E2-GluRF2:13-782 -> 2E2-GluRF2_13-782
+4B5-GluRF2:36-805 -> 4B5-GluRF2_36-805
+4B7-GluRF2:3-791 -> 4B7-GluRF2_3-791
+4C4-GluRF2:3-791 -> 4C4-GluRF2_3-791
+4C5-GluRF2:17-805 -> 4C5-GluRF2_17-805
+4H1-GluRF2:15-803 -> 4H1-GluRF2_15-803
+4H5-GluRF2:6-794 -> 4H5-GluRF2_6-794
+4B8-GluRF2:1-789 -> 4B8-GluRF2_1-789
+4H2-GluRF2:18-786 -> 4H2-GluRF2_18-786
+4H7-GluRF2:23-785 -> 4H7-GluRF2_23-785
+4C6-CB3RF2:39-802 -> 4C6-CB3RF2_39-802
+4B5-CB3RF2:42-803 -> 4B5-CB3RF2_42-803
+4B4-GluRF2:15-809 -> 4B4-GluRF2_15-809
+504-GluRF2:3-792 -> 504-GluRF2_3-792
+4H5-CB3RF2:43-798 -> 4H5-CB3RF2_43-798
+4B4-CB3RF2:40-800 -> 4B4-CB3RF2_40-800
+505-GluRF2:17-807 -> 505-GluRF2_17-807
+4C6-GluRF2:37-805 -> 4C6-GluRF2_37-805
+4C5-CB3RF2:44-804 -> 4C5-CB3RF2_44-804
+4H7-CB3RF2:39-793 -> 4H7-CB3RF2_39-793
+4H1-CB3RF2:41-795 -> 4H1-CB3RF2_41-795
+4B8-CB3RF2:43-793 -> 4B8-CB3RF2_43-793
+4B7-CB3RF2:43-796 -> 4B7-CB3RF2_43-796
+Sebastes_diploproa-OM140784.1:24-586 -> Sebastes_diploproa-OM140784.1_24-586
+4H6-CB3RF2:39-799 -> 4H6-CB3RF2_39-799
+1E3-GluRF2:11-776 -> 1E3-GluRF2_11-776
+4B3-GluRF2:6-794 -> 4B3-GluRF2_6-794
+4B3-CB3RF2:40-794 -> 4B3-CB3RF2_40-794
+3A6-GluRF2:2-778 -> 3A6-GluRF2_2-778
+4H4-GluRF2:18-779 -> 4H4-GluRF2_18-779
+4H4-CB3RF2:38-798 -> 4H4-CB3RF2_38-798
+4H3-CB3RF2:41-796 -> 4H3-CB3RF2_41-796
+1E3-CB3RF2:42-770 -> 1E3-CB3RF2_42-770
+4G12-GluRF2:6-791 -> 4G12-GluRF2_6-791
+4C7-GluRF2:16-804 -> 4C7-GluRF2_16-804
+4C7-CB3RF2:43-803 -> 4C7-CB3RF2_43-803
+4G12-CB3RF2:42-792 -> 4G12-CB3RF2_42-792
+5C10-GluRF2:1-777 -> 5C10-GluRF2_1-777
+5C10-CB3RF2:41-787 -> 5C10-CB3RF2_41-787
+4B9-CB3RF2:42-797 -> 4B9-CB3RF2_42-797
+4B9-GluRF2:17-790 -> 4B9-GluRF2_17-790
+Sebastes_elongatus-OM140747.1:1-530 -> Sebastes_elongatus-OM140747.1_1-530
+590-CB3RF2:67-801 -> 590-CB3RF2_67-801
+Sebastes_melanops-OP718454.1:44-812 -> Sebastes_melanops-OP718454.1_44-812
+590-GluRF2:17-783 -> 590-GluRF2_17-783
+Sebastes_flavidus-OM140820.1:39-586 -> Sebastes_flavidus-OM140820.1_39-586
+4A8-GluRF2:6-774 -> 4A8-GluRF2_6-774
+4A9-CB3RF2:42-796 -> 4A9-CB3RF2_42-796
+2G6-CB3RF2:38-791 -> 2G6-CB3RF2_38-791
+5C5-CB3RF2:47-766 -> 5C5-CB3RF2_47-766
+5B1-CB3RF2:42-761 -> 5B1-CB3RF2_42-761
+5C6-CB3RF2:42-795 -> 5C6-CB3RF2_42-795
+5C3-GluRF2:3-785 -> 5C3-GluRF2_3-785
+5C4-GluRF2:1-789 -> 5C4-GluRF2_1-789
+2G2-GluRF2:14-797 -> 2G2-GluRF2_14-797
+5C6-GluRF2:5-785 -> 5C6-GluRF2_5-785
+2G6-GluRF2:3-790 -> 2G6-GluRF2_3-790
+5C5-GluRF2:1-769 -> 5C5-GluRF2_1-769
+5B1-GluRF2:18-791 -> 5B1-GluRF2_18-791
+4A7-CB3RF2:40-803 -> 4A7-CB3RF2_40-803
+5C3-CB3RF2:44-797 -> 5C3-CB3RF2_44-797
+4A8-CB3RF2:44-798 -> 4A8-CB3RF2_44-798
+4A7-GluRF2:20-791 -> 4A7-GluRF2_20-791
+2G2-CB3RF2:34-798 -> 2G2-CB3RF2_34-798
+5C4-CB3RF2:39-793 -> 5C4-CB3RF2_39-793
+Sebastes_saxicola-OM140773.1:1-530 -> Sebastes_saxicola-OM140773.1_1-530
+Sebastes_serranoides-AF031498.1:39-827 -> Sebastes_serranoides-AF031498.1_39-827
+4H6-GluRF2:66-807 -> 4H6-GluRF2_66-807
+Sebastes_aurora-OM140748.1:1-530 -> Sebastes_aurora-OM140748.1_1-530
+350-CB3RF2:45-789 -> 350-CB3RF2_45-789
+4A9-GluRF2:25-793 -> 4A9-GluRF2_25-793
+Sebastes_alutus-MZ931261.1:1-144 -> Sebastes_alutus-MZ931261.1_1-144
+2F3-GluRF2:183-807 -> 2F3-GluRF2_183-807
+Sebastes_proriger-OM140744.1:1-530 -> Sebastes_proriger-OM140744.1_1-530
+Sebastes_aleutianus-NC_039779.1:14414-15217 -> Sebastes_aleutianus-NC_039779.1_14414-15217
+Sebastes_melanostictus-NC_056778.1:14408-15211 -> Sebastes_melanostictus-NC_056778.1_14408-15211
+150-GluRF2:1-805 -> 150-GluRF2_1-805
+3F9-GluRF2:1-794 -> 3F9-GluRF2_1-794
+3F11-GluRF2:11-781 -> 3F11-GluRF2_11-781
+2H9-GluRF2:14-784 -> 2H9-GluRF2_14-784
+3E11-GluRF2:20-786 -> 3E11-GluRF2_20-786
+2H8-CB3RF2:39-790 -> 2H8-CB3RF2_39-790
+2H9-CB3RF2:37-775 -> 2H9-CB3RF2_37-775
+152-CB3RF2:44-791 -> 152-CB3RF2_44-791
+2H4-CB3RF2:33-751 -> 2H4-CB3RF2_33-751
+3E11-CB3RF2:51-770 -> 3E11-CB3RF2_51-770
+Sebastes_rubrivinctus-NC_039777.1:14411-15214 -> Sebastes_rubrivinctus-NC_039777.1_14411-15214
+Sebastes_eos-AF031506.1:24-827 -> Sebastes_eos-AF031506.1_24-827
+Sebastes_helvomaculatus-AF031508.1:25-827 -> Sebastes_helvomaculatus-AF031508.1_25-827
+3A3-GluRF2:15-798 -> 3A3-GluRF2_15-798
+2G3-GluRF2:14-797 -> 2G3-GluRF2_14-797
+3A4-GluRF2:16-775 -> 3A4-GluRF2_16-775
+3A3-CB3RF2:43-803 -> 3A3-CB3RF2_43-803
+3A4-CB3RF2:41-791 -> 3A4-CB3RF2_41-791
+502-GluRF2:6-800 -> 502-GluRF2_6-800
+4C2-GluRF2:6-788 -> 4C2-GluRF2_6-788
+2G3-CB3RF2:35-791 -> 2G3-CB3RF2_35-791
+4C2-CB3RF2:39-792 -> 4C2-CB3RF2_39-792
+502-CB3RF2:70-799 -> 502-CB3RF2_70-799
+Sebastes_ovalis-OM140742.1:1-530 -> Sebastes_ovalis-OM140742.1_1-530
+3F3-GluRF2:265-508 -> 3F3-GluRF2_265-508
+Sebastes_brevispinis-MZ931241.1:1-80 -> Sebastes_brevispinis-MZ931241.1_1-80
+Sebastes_miniatus-OM140740.1:1-530 -> Sebastes_miniatus-OM140740.1_1-530
+Sebastes_lentiginosus-AF031509.1:24-827 -> Sebastes_lentiginosus-AF031509.1_24-827
+Sebastes_umbrosus-MF573899.1:22-739 -> Sebastes_umbrosus-MF573899.1_22-739
+Sebastes_pinniger-OM140695.1:1-508 -> Sebastes_pinniger-OM140695.1_1-508
+Sebastes_rosaceus-OM140811.1:24-586 -> Sebastes_rosaceus-OM140811.1_24-586
+Sebastes_constellatus-AF031505.1:24-827 -> Sebastes_constellatus-AF031505.1_24-827
+600-CB3RF2:48-787 -> 600-CB3RF2_48-787
+Sebastes_rosenblatti-AF031511.1:24-827 -> Sebastes_rosenblatti-AF031511.1_24-827
+Sebastes_nigrocinctus-NC_039778.1:14410-15213 -> Sebastes_nigrocinctus-NC_039778.1_14410-15213
+Sebastes_chlorostictus-MF573894.1:18-776 -> Sebastes_chlorostictus-MF573894.1_18-776
+Sebastes_ensifer-MF573893.1:12-755 -> Sebastes_ensifer-MF573893.1_12-755
+Sebastes_babcocki-MZ931273.1:1-131 -> Sebastes_babcocki-MZ931273.1_1-131
+
+                                                Gap/Ambiguity  Composition  p-value
+   1  Artedius_harringtoni-LC546701.1_2-790             8.47%    passed      6.97%
+   2  4A1-GluRF2_2-639                                 29.93%    passed     71.88%
+   3  4G6-GluRF2_49-659                                35.50%    passed      6.57%
+   4  3H6-GluRF2_209-718                               45.48%    passed     62.34%
+   5  4H11-GluRF2_90-690                               33.64%    passed     65.11%
+   6  5A3-GluRF2_163-274                               87.94%    passed     64.48%
+   7  3A8-GluRF2_144-708                               39.10%    passed     47.38%
+   8  3B11-CB3RF2_50-659                               30.16%    passed     80.56%
+   9  3B11-GluRF2_141-748                              30.16%    passed     82.67%
+  10  3E9-GluRF2_123-788                               23.09%    passed     83.05%
+  11  1E11-GluRF2_103-745                              26.22%    passed     95.68%
+  12  1E11-CB3RF2_49-710                               23.55%    passed     95.38%
+  13  1A9-GluRF2_181-789                               29.58%    passed     93.02%
+  14  3A7-GluRF2_23-765                                14.04%    passed     93.58%
+  15  Sebastes_paucispinis-MK841520.1_41-826            8.82%    passed     85.93%
+  16  3A11-GluRF2_7-780                                10.21%    passed     93.31%
+  17  3A11-CB3RF2_72-774                               18.45%    passed     91.78%
+  18  4A11-GluRF2_17-733                               20.53%    passed     94.96%
+  19  4D10-CB3RF2_81-605                               41.07%    passed     21.83%
+  20  4D10-GluRF2_144-766                              33.29%    passed     94.79%
+  21  3B6-GluRF2_31-782                                14.15%    passed     96.31%
+  22  352-GluRF2_7-784                                  9.98%    passed     98.90%
+  23  Sebastes_caurinus-NC_066933.1_14409-15211         6.84%    passed     97.04%
+  24  4A12-GluRF2_38-799                               12.30%    passed     98.70%
+  25  Sebastes_maliger-NC_056782.1_14409-15211          6.84%    passed     96.90%
+  26  4A12-CB3RF2_45-802                               12.06%    passed     99.44%
+  27  4F10-CB3RF2_43-791                               13.23%    passed     98.40%
+  28  3H12-GluRF2_2-783                                 9.28%    passed     99.24%
+  29  4F10-GluRF2_20-787                               10.90%    passed     99.95%
+  30  2G10-GluRF2_12-774                               11.60%    passed     99.83%
+  31  2G10-CB3RF2_36-779                               13.81%    passed     92.86%
+  32  600-GluRF2_17-784                                12.18%    passed     98.85%
+  33  Sebastes_atrovirens-AY582088.1_29-396            57.31%    passed     87.92%
+  34  3B5-GluRF2_58-777                                16.47%    passed     88.61%
+  35  637-GluRF2_19-780                                11.95%    passed     99.52%
+  36  4B12-GluRF2_26-788                               11.72%    passed     99.32%
+  37  5A5-GluRF2_65-792                                15.55%    passed     86.34%
+  38  5A5-CB3RF2_34-733                                18.79%    passed     90.18%
+  39  3A12-GluRF2_93-810                               16.71%    passed     88.15%
+  40  4B12-CB3RF2_41-762                               16.24%    passed     90.86%
+  41  5A8-GluRF2_4-785                                  9.28%    passed     93.95%
+  42  5A8-CB3RF2_41-789                                13.11%    passed     94.32%
+  43  2G9-GluRF2_20-783                                11.37%    passed     99.45%
+  44  2G12-GluRF2_25-773                               13.11%    passed     99.26%
+  45  2G12-CB3RF2_39-753                               17.05%    passed     88.14%
+  46  2G9-CB3RF2_41-762                                16.24%    passed     88.03%
+  47  2H3-CB3RF2_38-768                                15.20%    passed     87.35%
+  48  4G2-CB3RF2_47-785                                14.27%    passed     92.10%
+  49  4F9-CB3RF2_47-799                                12.65%    passed     97.98%
+  50  4F9-GluRF2_13-781                                10.79%    passed     98.51%
+  51  2H3-GluRF2_21-792                                10.44%    passed     97.10%
+  52  4G2-GluRF2_1-780                                  9.63%    passed     97.54%
+  53  3B4-GluRF2_95-786                                19.95%    passed     96.59%
+  54  4A10-GluRF2_42-761                               17.98%    passed     94.52%
+  55  3B4-CB3RF2_59-683                                28.42%    passed     88.61%
+  56  4A5-GluRF2_20-777                                13.34%    passed     95.75%
+  57  3B7-CB3RF2_47-740                                19.49%    passed     99.99%
+  58  2G1-GluRF2_70-796                                15.66%    passed     98.28%
+  59  2G1-CB3RF2_47-707                                23.78%    passed     99.50%
+  60  4E10-CB3RF2_51-654                               30.05%    passed     95.75%
+  61  3B3-CB3RF2_54-808                                12.41%    passed     96.44%
+  62  3B2-GluRF2_9-776                                 10.90%    passed     96.58%
+  63  3B3-GluRF2_11-773                                11.48%    passed     94.77%
+  64  3B2-CB3RF2_48-791                                13.69%    passed     99.88%
+  65  4F12-GluRF2_1-784                                 9.16%    passed     83.89%
+  66  4F12-CB3RF2_44-799                               12.30%    passed     93.35%
+  67  4H9-CB3RF2_41-798                                12.18%    passed     94.61%
+  68  2G4-CB3RF2_38-768                                15.20%    passed     99.89%
+  69  351-GluRF2_1-791                                  8.35%    passed     89.92%
+  70  2G4-GluRF2_19-780                                11.95%    passed     96.68%
+  71  3B7-GluRF2_33-789                                12.30%    passed     90.98%
+  72  4G3-CB3RF2_41-798                                12.06%    passed     93.40%
+  73  4H9-GluRF2_1-783                                  9.16%    passed     87.33%
+  74  4G3-GluRF2_1-783                                  9.16%    passed     87.33%
+  75  4F3-GluRF2_6-788                                  9.16%    passed     87.33%
+  76  4F3-CB3RF2_41-795                                12.41%    passed     97.52%
+  77  4E10-GluRF2_96-785                               19.95%    passed     97.28%
+  78  4A5-CB3RF2_45-803                                11.95%    passed     97.30%
+  79  3B9-CB3RF2_42-791                                13.11%    passed     99.96%
+  80  4A2-GluRF2_4-771                                 10.90%    passed     98.53%
+  81  4F5-GluRF2_3-791                                  8.47%    passed     89.23%
+  82  4G5-GluRF2_3-785                                  9.16%    passed     92.73%
+  83  4F4-GluRF2_1-783                                  9.16%    passed     92.73%
+  84  3B9-GluRF2_3-785                                  9.16%    passed     92.73%
+  85  4B1-GluRF2_7-784                                  9.74%    passed     91.78%
+  86  4B1-CB3RF2_42-800                                11.95%    passed     98.05%
+  87  4A10-CB3RF2_42-800                               11.95%    passed     98.05%
+  88  4G5-CB3RF2_45-799                                12.41%    passed     99.45%
+  89  4F5-CB3RF2_44-797                                12.53%    passed     99.45%
+  90  4F4-CB3RF2_44-795                                12.76%    passed     99.85%
+  91  4A2-CB3RF2_42-782                                14.04%    passed     99.75%
+  92  Sebastes_auriculatus-OM140696.1_1-508            41.07%    passed     37.59%
+  93  Sebastes_ciliatus-NC_060709.1_14407-15210         6.73%    passed     99.77%
+  94  Sebastes_crameri-OM140814.1_24-586               34.69%    passed     60.21%
+  95  Sebastes_variegatus-OM141008.1_1-486             44.08%    passed     34.24%
+  96  Sebastes_ruberrimus-MZ931258.1_3-143             83.64%    passed     83.30%
+  97  2E8-CB3RF2_49-752                                18.45%    passed     94.99%
+  98  5C7-CB3RF2_42-799                                12.30%    passed     99.93%
+  99  5C7-GluRF2_13-786                                10.21%    passed     99.76%
+ 100  2E8-GluRF2_50-797                                13.23%    passed     99.98%
+ 101  Sebastes_goodei-OM140810.1_25-584                35.03%    passed     88.49%
+ 102  Sebastes_semicinctus-MK858223.1_48-821           10.21%    passed     93.02%
+ 103  3D10-GluRF2_9-724                                17.87%    passed     99.02%
+ 104  2D12-CB3RF2_52-729                               22.39%    passed     95.34%
+ 105  2F7-GluRF2_44-781                                14.73%    passed     96.13%
+ 106  3G7-GluRF2_67-777                                17.98%    passed     85.92%
+ 107  3F10-GluRF2_67-727                               23.67%    passed     97.65%
+ 108  4A4-GluRF2_16-793                                10.09%    passed     76.89%
+ 109  153-GluRF2_24-792                                11.60%    passed     83.80%
+ 110  2E7-GluRF2_210-798                               32.13%    passed     73.70%
+ 111  2D12-GluRF2_23-796                               10.44%    passed     65.99%
+ 112  3D11-GluRF2_137-783                              25.87%    passed     85.13%
+ 113  2F8-GluRF2_84-796                                17.29%    passed     86.76%
+ 114  2F8-CB3RF2_40-718                                21.23%    passed     99.70%
+ 115  4A4-CB3RF2_50-799                                13.11%    passed     92.25%
+ 116  2F10-GluRF2_90-798                               17.98%    passed     81.65%
+ 117  2H5-GluRF2_65-790                                15.78%    passed     93.05%
+ 118  3F12-GluRF2_14-787                               10.32%    passed     76.48%
+ 119  2G8-GluRF2_17-784                                11.02%    passed     80.91%
+ 120  3G12-GluRF2_15-783                               10.79%    passed     80.42%
+ 121  2H8-GluRF2_6-792                                  8.70%    passed     62.87%
+ 122  2H1-GluRF2_14-784                                10.56%    passed     77.17%
+ 123  2H2-GluRF2_8-775                                 10.90%    passed     80.70%
+ 124  2F12-GluRF2_29-790                               11.72%    passed     83.62%
+ 125  2G11-GluRF2_1-758                                12.06%    passed     84.55%
+ 126  2H10-GluRF2_8-796                                 8.58%    passed     65.00%
+ 127  3F12-CB3RF2_42-784                               13.81%    passed     96.08%
+ 128  3F11-CB3RF2_50-773                               16.13%    passed     99.14%
+ 129  150-CB3RF2_53-744                                19.72%    passed     99.98%
+ 130  Sebastes_jordani-OM140805.1_24-586               34.69%    passed     82.53%
+ 131  4B2-GluRF2_17-797                                 9.40%    passed     65.04%
+ 132  3F7-GluRF2_6-791                                  8.82%    passed     61.11%
+ 133  3G1-GluRF2_12-800                                 8.47%    passed     62.31%
+ 134  3G3-GluRF2_1-784                                  9.05%    passed     61.78%
+ 135  2H1-CB3RF2_37-782                                13.57%    passed     96.73%
+ 136  2G8-CB3RF2_36-786                                12.99%    passed     90.68%
+ 137  3F9-CB3RF2_44-797                                12.65%    passed     89.71%
+ 138  4B2-CB3RF2_44-786                                13.81%    passed     97.74%
+ 139  3F7-CB3RF2_45-781                                14.50%    passed     98.68%
+ 140  3G3-CB3RF2_42-795                                12.53%    passed     89.41%
+ 141  2H10-CB3RF2_39-789                               12.99%    passed     93.00%
+ 142  3G1-CB3RF2_50-803                                12.65%    passed     89.71%
+ 143  2H2-CB3RF2_42-789                                13.34%    passed     96.68%
+ 144  2H4-GluRF2_57-783                                15.78%    passed     90.41%
+ 145  2G11-CB3RF2_86-775                               20.19%    passed     99.47%
+ 146  152-GluRF2_13-743                                15.78%    passed     91.57%
+ 147  Sebastes_mystinus-MF573897.1_5-757               12.65%    passed     91.16%
+ 148  Sebastes_entomelas-OM140817.1_25-586             34.80%    passed     56.20%
+ 149  4A6-CB3RF2_50-559                                41.18%    passed     50.38%
+ 150  504-CB3RF2_57-817                                12.65%    passed     98.12%
+ 151  4A6-GluRF2_136-736                               31.90%    passed     95.71%
+ 152  507-CB3RF2_57-813                                12.99%    passed     98.87%
+ 153  350-GluRF2_25-806                                10.21%    passed     85.91%
+ 154  505-CB3RF2_57-817                                12.41%    passed     96.01%
+ 155  4H3-GluRF2_18-779                                12.18%    passed     99.43%
+ 156  4H2-CB3RF2_37-785                                13.69%    passed     96.13%
+ 157  4B6-GluRF2_20-785                                11.25%    passed     97.84%
+ 158  2E2-CB3RF2_53-782                                15.78%    passed     76.65%
+ 159  4G1-GluRF2_80-783                                18.33%    passed     97.34%
+ 160  3A6-CB3RF2_51-770                                16.71%    passed     75.39%
+ 161  506-CB3RF2_52-812                                12.18%    passed     99.57%
+ 162  4C8-GluRF2_19-793                                10.32%    passed     95.78%
+ 163  506-GluRF2_16-805                                 9.51%    passed     94.70%
+ 164  507-GluRF2_3-793                                  9.98%    passed     99.48%
+ 165  4B6-CB3RF2_41-801                                11.95%    passed     99.65%
+ 166  4C4-CB3RF2_42-788                                13.34%    passed     92.39%
+ 167  4C8-CB3RF2_40-793                                12.65%    passed     97.72%
+ 168  2E2-GluRF2_13-782                                10.67%    passed     97.84%
+ 169  4B5-GluRF2_36-805                                10.67%    passed     97.84%
+ 170  4B7-GluRF2_3-791                                  8.47%    passed     99.97%
+ 171  4C4-GluRF2_3-791                                  8.47%    passed     99.97%
+ 172  4C5-GluRF2_17-805                                 8.47%    passed     99.97%
+ 173  4H1-GluRF2_15-803                                 8.47%    passed     99.97%
+ 174  4H5-GluRF2_6-794                                  8.47%    passed     99.97%
+ 175  4B8-GluRF2_1-789                                  8.58%    passed     99.91%
+ 176  4H2-GluRF2_18-786                                10.79%    passed     98.26%
+ 177  4H7-GluRF2_23-785                                11.48%    passed     97.89%
+ 178  4C6-CB3RF2_39-802                                11.48%    passed     99.17%
+ 179  4B5-CB3RF2_42-803                                11.72%    passed     99.32%
+ 180  4B4-GluRF2_15-809                                 8.24%    passed     98.50%
+ 181  504-GluRF2_3-792                                  9.28%    passed     95.56%
+ 182  4H5-CB3RF2_43-798                                12.53%    passed     97.61%
+ 183  4B4-CB3RF2_40-800                                11.95%    passed     99.36%
+ 184  505-GluRF2_17-807                                 9.16%    passed     97.86%
+ 185  4C6-GluRF2_37-805                                10.79%    passed     97.11%
+ 186  4C5-CB3RF2_44-804                                11.72%    passed     99.32%
+ 187  4H7-CB3RF2_39-793                                12.41%    passed     97.95%
+ 188  4H1-CB3RF2_41-795                                12.41%    passed     97.95%
+ 189  4B8-CB3RF2_43-793                                12.88%    passed     96.98%
+ 190  4B7-CB3RF2_43-796                                12.53%    passed     98.31%
+ 191  Sebastes_diploproa-OM140784.1_24-586             34.69%    passed     40.73%
+ 192  4H6-CB3RF2_39-799                                11.95%    passed     99.25%
+ 193  1E3-GluRF2_11-776                                11.14%    passed     97.12%
+ 194  4B3-GluRF2_6-794                                  8.47%    passed     99.73%
+ 195  4B3-CB3RF2_40-794                                12.41%    passed     97.53%
+ 196  3A6-GluRF2_2-778                                  9.98%    passed     97.75%
+ 197  4H4-GluRF2_18-779                                11.72%    passed     97.52%
+ 198  4H4-CB3RF2_38-798                                11.95%    passed     99.72%
+ 199  4H3-CB3RF2_41-796                                12.41%    passed     98.65%
+ 200  1E3-CB3RF2_42-770                                15.55%    passed     81.22%
+ 201  4G12-GluRF2_6-791                                 8.82%    passed     99.89%
+ 202  4C7-GluRF2_16-804                                 8.47%    passed     99.92%
+ 203  4C7-CB3RF2_43-803                                11.95%    passed     99.72%
+ 204  4G12-CB3RF2_42-792                               12.88%    passed     97.73%
+ 205  5C10-GluRF2_1-777                                10.09%    passed     86.79%
+ 206  5C10-CB3RF2_41-787                               13.34%    passed     70.35%
+ 207  4B9-CB3RF2_42-797                                12.41%    passed     88.19%
+ 208  4B9-GluRF2_17-790                                10.21%    passed     90.77%
+ 209  Sebastes_elongatus-OM140747.1_1-530              38.52%    passed     26.73%
+ 210  590-CB3RF2_67-801                                15.55%    passed     81.25%
+ 211  Sebastes_melanops-OP718454.1_44-812              10.79%    passed     97.01%
+ 212  590-GluRF2_17-783                                12.06%    passed     94.92%
+ 213  Sebastes_flavidus-OM140820.1_39-586              36.43%    passed     19.12%
+ 214  4A8-GluRF2_6-774                                 11.72%    passed     99.91%
+ 215  4A9-CB3RF2_42-796                                12.53%    passed     99.79%
+ 216  2G6-CB3RF2_38-791                                12.65%    passed     99.49%
+ 217  5C5-CB3RF2_47-766                                16.47%    passed     86.44%
+ 218  5B1-CB3RF2_42-761                                16.47%    passed     86.44%
+ 219  5C6-CB3RF2_42-795                                12.53%    passed     99.20%
+ 220  5C3-GluRF2_3-785                                  9.16%    passed     99.35%
+ 221  5C4-GluRF2_1-789                                  8.47%    passed     99.80%
+ 222  2G2-GluRF2_14-797                                 9.05%    passed     99.66%
+ 223  5C6-GluRF2_5-785                                  9.63%    passed     99.00%
+ 224  2G6-GluRF2_3-790                                  8.58%    passed     99.84%
+ 225  5C5-GluRF2_1-769                                 10.79%    passed     99.58%
+ 226  5B1-GluRF2_18-791                                10.21%    passed     99.10%
+ 227  4A7-CB3RF2_40-803                                11.60%    passed     99.84%
+ 228  5C3-CB3RF2_44-797                                12.53%    passed     99.67%
+ 229  4A8-CB3RF2_44-798                                12.41%    passed     99.64%
+ 230  4A7-GluRF2_20-791                                10.67%    passed     99.45%
+ 231  2G2-CB3RF2_34-798                                11.72%    passed     99.70%
+ 232  5C4-CB3RF2_39-793                                12.53%    passed     99.67%
+ 233  Sebastes_saxicola-OM140773.1_1-530               38.52%    passed     32.97%
+ 234  Sebastes_serranoides-AF031498.1_39-827            8.47%    passed     92.26%
+ 235  4H6-GluRF2_66-807                                16.01%    passed     96.33%
+ 236  Sebastes_aurora-OM140748.1_1-530                 38.52%    passed     46.85%
+ 237  350-CB3RF2_45-789                                15.55%    passed     92.66%
+ 238  4A9-GluRF2_25-793                                12.41%    passed     99.28%
+ 239  Sebastes_alutus-MZ931261.1_1-144                 83.29%    passed     93.42%
+ 240  2F3-GluRF2_183-807                               28.07%    passed     97.09%
+ 241  Sebastes_proriger-OM140744.1_1-530               38.52%    passed     57.24%
+ 242  Sebastes_aleutianus-NC_039779.1_14414-15217       6.73%    passed     95.69%
+ 243  Sebastes_melanostictus-NC_056778.1_14408-15211    6.73%    passed     95.69%
+ 244  150-GluRF2_1-805                                  7.77%    passed     72.59%
+ 245  3F9-GluRF2_1-794                                  8.70%    passed     60.65%
+ 246  3F11-GluRF2_11-781                               10.79%    passed     81.39%
+ 247  2H9-GluRF2_14-784                                10.67%    passed     71.09%
+ 248  3E11-GluRF2_20-786                               11.14%    passed     80.92%
+ 249  2H8-CB3RF2_39-790                                12.99%    passed     90.68%
+ 250  2H9-CB3RF2_37-775                                14.50%    passed     98.10%
+ 251  152-CB3RF2_44-791                                14.73%    passed     97.64%
+ 252  2H4-CB3RF2_33-751                                16.82%    passed     99.70%
+ 253  3E11-CB3RF2_51-770                               16.71%    passed     99.44%
+ 254  Sebastes_rubrivinctus-NC_039777.1_14411-15214     6.73%    passed     97.42%
+ 255  Sebastes_eos-AF031506.1_24-827                    6.73%    passed     92.90%
+ 256  Sebastes_helvomaculatus-AF031508.1_25-827         6.84%    passed     94.53%
+ 257  3A3-GluRF2_15-798                                 9.05%    passed     99.12%
+ 258  2G3-GluRF2_14-797                                 9.05%    passed     95.87%
+ 259  3A4-GluRF2_16-775                                11.95%    passed     97.76%
+ 260  3A3-CB3RF2_43-803                                11.95%    passed     99.35%
+ 261  3A4-CB3RF2_41-791                                12.88%    passed     98.25%
+ 262  502-GluRF2_6-800                                  8.35%    passed     99.87%
+ 263  4C2-GluRF2_6-788                                  9.16%    passed     99.85%
+ 264  2G3-CB3RF2_35-791                                12.30%    passed     98.34%
+ 265  4C2-CB3RF2_39-792                                12.65%    passed     99.74%
+ 266  502-CB3RF2_70-799                                15.43%    passed     86.31%
+ 267  Sebastes_ovalis-OM140742.1_1-530                 38.52%    passed     41.56%
+ 268  3F3-GluRF2_265-508                               75.29%    failed      2.56%
+ 269  Sebastes_brevispinis-MZ931241.1_1-80             90.72%    passed     87.79%
+ 270  Sebastes_miniatus-OM140740.1_1-530               38.52%    passed     27.42%
+ 271  Sebastes_lentiginosus-AF031509.1_24-827           6.73%    passed     83.85%
+ 272  Sebastes_umbrosus-MF573899.1_22-739              16.71%    passed     96.50%
+ 273  Sebastes_pinniger-OM140695.1_1-508               41.07%    passed     33.81%
+ 274  Sebastes_rosaceus-OM140811.1_24-586              34.69%    passed     80.62%
+ 275  Sebastes_constellatus-AF031505.1_24-827           6.73%    passed     98.01%
+ 276  600-CB3RF2_48-787                                16.59%    passed     90.89%
+ 277  Sebastes_rosenblatti-AF031511.1_24-827            6.73%    passed     92.73%
+ 278  Sebastes_nigrocinctus-NC_039778.1_14410-15213     6.73%    passed     96.99%
+ 279  Sebastes_chlorostictus-MF573894.1_18-776         11.95%    passed     94.43%
+ 280  Sebastes_ensifer-MF573893.1_12-755               13.69%    passed     99.15%
+ 281  Sebastes_babcocki-MZ931273.1_1-131               84.80%    passed     94.98%
+WARNING: 7 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                            16.78%  1 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: 4G3-GluRF2_1-783 is identical to 4H9-GluRF2_1-783 but kept for subsequent analysis
+NOTE: 4F4-GluRF2_1-783 is identical to 4G5-GluRF2_3-785 but kept for subsequent analysis
+NOTE: 4A10-CB3RF2_42-800 is identical to 4B1-CB3RF2_42-800 but kept for subsequent analysis
+NOTE: 4B5-GluRF2_36-805 is identical to 2E2-GluRF2_13-782 but kept for subsequent analysis
+NOTE: 4C4-GluRF2_3-791 is identical to 4B7-GluRF2_3-791 but kept for subsequent analysis
+NOTE: 4H1-CB3RF2_41-795 is identical to 4H7-CB3RF2_39-793 but kept for subsequent analysis
+NOTE: 5B1-CB3RF2_42-761 is identical to 5C5-CB3RF2_47-766 but kept for subsequent analysis
+NOTE: Sebastes_melanostictus-NC_056778.1_14408-15211 is identical to Sebastes_aleutianus-NC_039779.1_14414-15217 but kept for subsequent analysis
+NOTE: 5 identical sequences (see below) will be ignored for subsequent analysis
+NOTE: 4F3-GluRF2_6-788 (identical to 4H9-GluRF2_1-783) is ignored but added at the end
+NOTE: 3B9-GluRF2_3-785 (identical to 4G5-GluRF2_3-785) is ignored but added at the end
+NOTE: 4C5-GluRF2_17-805 (identical to 4B7-GluRF2_3-791) is ignored but added at the end
+NOTE: 4H1-GluRF2_15-803 (identical to 4B7-GluRF2_3-791) is ignored but added at the end
+NOTE: 4H5-GluRF2_6-794 (identical to 4B7-GluRF2_3-791) is ignored but added at the end
+
+For your convenience alignment with unique sequences printed to Rockfish_Vetted_Seqs.Domains.Alignment.fasta.uniqueseq.phy
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.044 seconds
+NOTE: ModelFinder requires 69 MB RAM!
+ModelFinder will test 286 DNA models (sample size: 862) ...
+ No. Model         -LnL         df  AIC          AICc         BIC
+  1  JC            7710.672     549 16519.344    18454.921    19132.175
+  2  JC+I          7569.983     550 16239.966    18188.840    18857.556
+  3  JC+G4         7473.440     550 16046.880    17995.755    18664.470
+  4  JC+I+G4       7474.520     551 16051.040    18013.311    18673.389
+  5  JC+R2         7459.872     551 16021.745    17984.016    18644.094
+  6  JC+R3         7450.158     553 16006.315    17995.679    18638.184
+  7  JC+R4         7449.732     555 16009.464    18026.327    18650.851
+ 14  F81+F         7660.640     552 16425.279    18401.046    19052.388
+ 15  F81+F+I       7513.294     553 16132.588    18121.952    18764.457
+ 16  F81+F+G4      7415.426     553 15936.852    17926.215    18568.720
+ 17  F81+F+I+G4    7416.180     554 15940.360    17943.422    18576.987
+ 18  F81+F+R2      7402.415     554 15912.831    17915.893    18549.458
+ 19  F81+F+R3      7392.600     556 15897.200    17927.967    18543.346
+ 20  F81+F+R4      7392.167     558 15900.334    17959.225    18555.998
+ 27  K2P           7466.844     550 16033.689    17982.563    18651.279
+ 28  K2P+I         7320.174     551 15742.348    17704.619    18364.697
+ 29  K2P+G4        7218.016     551 15538.032    17500.303    18160.382
+ 30  K2P+I+G4      7218.689     552 15541.377    17517.144    18168.486
+ 31  K2P+R2        7203.883     552 15511.766    17487.533    18138.875
+ 32  K2P+R3        7193.709     554 15495.418    17498.480    18132.045
+ 33  K2P+R4        7192.830     556 15497.659    17528.426    18143.805
+ 40  HKY+F         7440.696     553 15987.392    17976.756    18619.260
+ 41  HKY+F+I       7288.140     554 15684.281    17687.343    18320.908
+ 42  HKY+F+G4      7180.349     554 15468.698    17471.760    18105.325
+ 43  HKY+F+I+G4    7180.849     555 15471.699    17488.561    18113.085
+ 44  HKY+F+R2      7166.227     555 15442.455    17459.318    18083.842
+ 45  HKY+F+R3      7155.409     557 15424.818    17469.594    18075.723
+ 46  HKY+F+R4      7154.923     559 15427.846    17500.959    18088.270
+ 53  TNe           7463.395     551 16028.790    17991.061    18651.139
+ 54  TNe+I         7318.355     552 15740.711    17716.478    18367.820
+ 55  TNe+G4        7212.840     552 15529.680    17505.447    18156.789
+ 56  TNe+I+G4      7213.400     553 15532.800    17522.164    18164.668
+ 57  TNe+R2        7198.075     553 15502.151    17491.515    18134.019
+ 58  TNe+R3        7186.660     555 15483.320    17500.183    18124.707
+ 59  TNe+R4        7186.189     557 15486.377    17531.153    18137.282
+ 66  TN+F          7437.130     554 15982.261    17985.323    18618.888
+ 67  TN+F+I        7280.363     555 15670.727    17687.589    18312.113
+ 68  TN+F+G4       7175.621     555 15461.242    17478.105    18102.629
+ 69  TN+F+I+G4     7175.849     556 15463.699    17494.466    18109.845
+ 70  TN+F+R2       7162.838     556 15437.675    17468.443    18083.821
+ 71  TN+F+R3       7151.946     558 15419.892    17478.783    18075.556
+ 72  TN+F+R4       7151.505     560 15423.010    17510.452    18088.193
+ 79  K3P           7464.913     551 16031.826    17994.097    18654.176
+ 80  K3P+I         7317.930     552 15739.860    17715.627    18366.969
+ 81  K3P+G4        7214.805     552 15533.610    17509.377    18160.719
+ 82  K3P+I+G4      7215.144     553 15536.288    17525.652    18168.156
+ 83  K3P+R2        7200.375     553 15506.749    17496.113    18138.617
+ 84  K3P+R3        7189.865     555 15489.730    17506.593    18131.117
+ 85  K3P+R4        7189.518     557 15493.036    17537.813    18143.941
+ 92  K3Pu+F        7437.701     554 15983.402    17986.464    18620.029
+ 93  K3Pu+F+I      7285.394     555 15680.787    17697.650    18322.174
+ 94  K3Pu+F+G4     7177.112     555 15464.225    17481.088    18105.612
+ 95  K3Pu+F+I+G4   7177.357     556 15466.713    17497.481    18112.859
+ 96  K3Pu+F+R2     7162.818     556 15437.636    17468.403    18083.782
+ 97  K3Pu+F+R3     7151.788     558 15419.576    17478.467    18075.240
+ 98  K3Pu+F+R4     7151.372     560 15422.745    17510.187    18087.928
+105  TPM2+F        7435.402     554 15978.803    17981.865    18615.431
+106  TPM2+F+I      7286.721     555 15683.443    17700.306    18324.830
+107  TPM2+F+G4     7179.605     555 15469.210    17486.073    18110.597
+108  TPM2+F+I+G4   7179.841     556 15471.681    17502.449    18117.827
+109  TPM2+F+R2     7165.019     556 15442.037    17472.804    18088.183
+110  TPM2+F+R3     7154.109     558 15424.219    17483.110    18079.883
+111  TPM2+F+R4     7153.684     560 15427.367    17514.809    18092.550
+118  TPM2u+F       7435.403     554 15978.805    17981.867    18615.433
+119  TPM2u+F+I     7286.722     555 15683.444    17700.307    18324.831
+120  TPM2u+F+G4    7179.606     555 15469.212    17486.074    18110.598
+121  TPM2u+F+I+G4  7179.820     556 15471.639    17502.406    18117.785
+122  TPM2u+F+R2    7165.019     556 15442.038    17472.805    18088.184
+123  TPM2u+F+R3    7154.106     558 15424.213    17483.104    18079.877
+124  TPM2u+F+R4    7153.666     560 15427.333    17514.775    18092.516
+131  TPM3+F        7435.876     554 15979.752    17982.814    18616.379
+132  TPM3+F+I      7284.380     555 15678.759    17695.622    18320.146
+133  TPM3+F+G4     7175.570     555 15461.140    17478.003    18102.527
+134  TPM3+F+I+G4   7175.720     556 15463.439    17494.206    18109.585
+135  TPM3+F+R2     7160.598     556 15433.195    17463.962    18079.341
+136  TPM3+F+R3     7149.321     558 15414.643    17473.534    18070.307
+137  TPM3+F+R4     7148.951     560 15417.901    17505.343    18083.084
+144  TPM3u+F       7435.879     554 15979.758    17982.819    18616.385
+145  TPM3u+F+I     7284.383     555 15678.766    17695.629    18320.153
+146  TPM3u+F+G4    7175.573     555 15461.146    17478.008    18102.532
+147  TPM3u+F+I+G4  7175.704     556 15463.408    17494.175    18109.554
+148  TPM3u+F+R2    7160.600     556 15433.200    17463.967    18079.346
+149  TPM3u+F+R3    7149.320     558 15414.641    17473.532    18070.305
+150  TPM3u+F+R4    7148.949     560 15417.898    17505.340    18083.081
+157  TIMe          7460.525     552 16025.051    18000.818    18652.160
+158  TIMe+I        7315.614     553 15737.228    17726.591    18369.096
+159  TIMe+G4       7209.803     553 15525.606    17514.970    18157.475
+160  TIMe+I+G4     7210.055     554 15528.110    17531.172    18164.738
+161  TIMe+R2       7194.945     554 15497.891    17500.953    18134.518
+162  TIMe+R3       7183.509     556 15479.017    17509.785    18125.163
+163  TIMe+R4       7181.082     558 15478.165    17537.056    18133.829
+170  TIM+F         7434.111     555 15978.222    17995.085    18619.609
+171  TIM+F+I       7277.596     556 15667.192    17697.959    18313.338
+172  TIM+F+G4      7172.375     556 15456.751    17487.518    18102.897
+173  TIM+F+I+G4    7172.372     557 15458.743    17503.519    18109.648
+174  TIM+F+R2      7159.436     557 15432.872    17477.648    18083.777
+175  TIM+F+R3      7148.383     559 15414.766    17487.879    18075.190
+176  TIM+F+R4      7147.203     561 15416.405    17518.285    18086.347
+183  TIM2e         7447.349     552 15998.697    17974.464    18625.806
+184  TIM2e+I       7307.264     553 15720.528    17709.891    18352.396
+185  TIM2e+G4      7201.866     553 15509.732    17499.096    18141.600
+186  TIM2e+I+G4    7202.170     554 15512.339    17515.401    18148.967
+187  TIM2e+R2      7186.636     554 15481.271    17484.333    18117.899
+188  TIM2e+R3      7175.634     556 15463.268    17494.035    18109.414
+189  TIM2e+R4      7172.878     558 15461.755    17520.646    18117.420
+196  TIM2+F        7431.786     555 15973.572    17990.435    18614.959
+197  TIM2+F+I      7279.071     556 15670.142    17700.910    18316.288
+198  TIM2+F+G4     7174.873     556 15461.745    17492.512    18107.891
+199  TIM2+F+I+G4   7174.840     557 15463.679    17508.455    18114.584
+200  TIM2+F+R2     7161.512     557 15437.025    17481.801    18087.930
+201  TIM2+F+R3     7150.771     559 15419.542    17492.654    18079.965
+202  TIM2+F+R4     7149.129     561 15420.257    17522.137    18090.199
+209  TIM3e         7458.733     552 16021.466    17997.233    18648.575
+210  TIM3e+I       7314.885     553 15735.771    17725.135    18367.639
+211  TIM3e+G4      7208.166     553 15522.332    17511.696    18154.200
+212  TIM3e+I+G4    7208.286     554 15524.572    17527.634    18161.199
+213  TIM3e+R2      7192.289     554 15492.579    17495.641    18129.206
+214  TIM3e+R3      7180.676     556 15473.353    17504.120    18119.498
+215  TIM3e+R4      7178.352     558 15472.705    17531.596    18128.369
+222  TIM3+F        7432.271     555 15974.543    17991.406    18615.930
+223  TIM3+F+I      7276.525     556 15665.049    17695.816    18311.195
+224  TIM3+F+G4     7170.796     556 15453.592    17484.360    18099.738
+225  TIM3+F+I+G4   7170.691     557 15455.381    17500.158    18106.287
+226  TIM3+F+R2     7157.214     557 15428.428    17473.204    18079.333
+227  TIM3+F+R3     7145.837     559 15409.674    17482.787    18070.098
+228  TIM3+F+R4     7144.555     561 15411.109    17512.989    18081.051
+235  TVMe          7446.190     553 15998.380    17987.743    18630.248
+236  TVMe+I        7305.278     554 15718.556    17721.617    18355.183
+237  TVMe+G4       7200.387     554 15508.773    17511.835    18145.400
+238  TVMe+I+G4     7200.536     555 15511.072    17527.935    18152.459
+239  TVMe+R2       7184.385     555 15478.770    17495.633    18120.157
+240  TVMe+R3       7173.855     557 15461.710    17506.487    18112.616
+241  TVMe+R4       7171.731     559 15461.462    17534.574    18121.885
+248  TVM+F         7429.511     556 15971.022    18001.790    18617.168
+249  TVM+F+I       7281.881     557 15677.762    17722.538    18328.667
+250  TVM+F+G4      7173.496     557 15460.993    17505.769    18111.898
+251  TVM+F+I+G4    7173.482     558 15462.963    17521.854    18118.628
+252  TVM+F+R2      7158.014     558 15432.028    17490.919    18087.692
+253  TVM+F+R3      7146.915     560 15413.830    17501.271    18079.013
+254  TVM+F+R4      7145.050     562 15414.101    17530.529    18088.802
+261  SYM           7441.716     554 15991.432    17994.494    18628.059
+262  SYM+I         7302.779     555 15715.558    17732.420    18356.944
+263  SYM+G4        7195.956     555 15501.913    17518.775    18143.299
+264  SYM+I+G4      7196.129     556 15504.257    17535.024    18150.403
+265  SYM+R2        7179.507     556 15471.014    17501.781    18117.160
+266  SYM+R3        7168.527     558 15453.054    17511.945    18108.719
+267  SYM+R4        7165.921     560 15451.841    17539.283    18117.024
+274  GTR+F         7425.950     557 15965.900    18010.676    18616.805
+275  GTR+F+I       7274.260     558 15664.521    17723.412    18320.185
+276  GTR+F+G4      7168.818     558 15453.636    17512.527    18109.301
+277  GTR+F+I+G4    7168.682     559 15455.363    17528.476    18115.787
+278  GTR+F+R2      7154.555     559 15427.109    17500.222    18087.533
+279  GTR+F+R3      7143.388     561 15408.775    17510.655    18078.718
+280  GTR+F+R4      7141.821     563 15409.641    17540.728    18089.102
+Akaike Information Criterion:           GTR+F+R3
+Corrected Akaike Information Criterion: HKY+F+R2
+Bayesian Information Criterion:         TIM3+F+R3
+Best-fit model: TIM3+F+R3 chosen according to BIC
+
+All model information printed to Rockfish_Vetted_Seqs.Domains.Alignment.fasta.model.gz
+CPU time for ModelFinder: 160.295 seconds (0h:2m:40s)
+Wall-clock time for ModelFinder: 162.627 seconds (0h:2m:42s)
+Generating 1000 samples for ultrafast bootstrap (seed: 653926)...
+
+NOTE: 22 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -7453.492
+2. Current log-likelihood: -7164.171
+3. Current log-likelihood: -7149.573
+4. Current log-likelihood: -7147.027
+5. Current log-likelihood: -7146.516
+6. Current log-likelihood: -7146.292
+7. Current log-likelihood: -7146.148
+8. Current log-likelihood: -7146.042
+Optimal log-likelihood: -7145.955
+Rate parameters:  A-C: 1.53837  A-G: 6.38930  A-T: 1.00000  C-G: 1.53837  C-T: 4.83812  G-T: 1.00000
+Base frequencies:  A: 0.243  C: 0.297  G: 0.158  T: 0.302
+Site proportion and rates:  (0.517,0.217) (0.363,0.951) (0.120,4.521)
+Parameters optimization took 8 rounds (5.546 sec)
+Computing ML distances based on estimated model parameters... 0.951 sec
+WARNING: Some pairwise ML distances are too long (saturated)
+Computing BIONJ tree...
+0.105 seconds
+Log-likelihood of BIONJ tree: -7309.821
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 3.795 second
+Computing log-likelihood of 98 initial trees ... 13.928 seconds
+Current best score: -7113.697
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -7094.805
+Iteration 10 / LogL: -7108.622 / Time: 0h:1m:37s
+Iteration 20 / LogL: -7095.911 / Time: 0h:2m:56s
+Finish initializing candidate tree set (20)
+Current best tree score: -7094.805 / CPU time: 169.704
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -7114.281 / Time: 0h:4m:6s (0h:10m:3s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 36: -7091.071
+Iteration 40 / LogL: -7115.299 / Time: 0h:5m:12s (0h:12m:48s left)
+Iteration 50 / LogL: -7099.871 / Time: 0h:5m:59s (0h:10m:31s left)
+Log-likelihood cutoff on original alignment: -7133.611
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 57: -7088.624
+Iteration 60 / LogL: -7097.694 / Time: 0h:6m:54s (0h:11m:22s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 70: -7086.717
+Iteration 70 / LogL: -7086.717 / Time: 0h:7m:50s (0h:11m:21s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 80: -7085.492
+Iteration 80 / LogL: -7085.492 / Time: 0h:8m:28s (0h:10m:43s left)
+Iteration 90 / LogL: -7088.362 / Time: 0h:9m:13s (0h:9m:19s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 99: -7085.140
+Iteration 100 / LogL: -7111.513 / Time: 0h:10m:14s (0h:10m:14s left)
+Log-likelihood cutoff on original alignment: -7130.162
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.963
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 110 / LogL: -7085.166 / Time: 0h:11m:1s (0h:9m:6s left)
+Iteration 120 / LogL: -7086.506 / Time: 0h:11m:54s (0h:8m:0s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 126: -7084.980
+Iteration 130 / LogL: -7100.198 / Time: 0h:12m:45s (0h:9m:29s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 137: -7083.478
+Iteration 140 / LogL: -7085.092 / Time: 0h:13m:34s (0h:9m:28s left)
+Iteration 150 / LogL: -7084.610 / Time: 0h:14m:22s (0h:8m:23s left)
+Log-likelihood cutoff on original alignment: -7129.043
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 159: -7083.371
+Iteration 160 / LogL: -7083.449 / Time: 0h:15m:13s (0h:9m:29s left)
+Iteration 170 / LogL: -7088.834 / Time: 0h:16m:1s (0h:8m:26s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 177: -7082.951
+Iteration 180 / LogL: -7096.403 / Time: 0h:16m:44s (0h:9m:4s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 181: -7082.430
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 186: -7081.514
+Iteration 190 / LogL: -7088.225 / Time: 0h:17m:32s (0h:8m:54s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 198: -7080.109
+Iteration 200 / LogL: -7084.963 / Time: 0h:18m:14s (0h:8m:58s left)
+Log-likelihood cutoff on original alignment: -7129.043
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.957
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 210 / LogL: -7116.168 / Time: 0h:18m:58s (0h:8m:10s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 214: -7080.020
+Iteration 220 / LogL: -7136.546 / Time: 0h:19m:39s (0h:8m:26s left)
+Iteration 230 / LogL: -7094.108 / Time: 0h:20m:21s (0h:7m:28s left)
+Iteration 240 / LogL: -7084.923 / Time: 0h:21m:1s (0h:6m:30s left)
+Iteration 250 / LogL: -7082.471 / Time: 0h:21m:44s (0h:5m:35s left)
+Log-likelihood cutoff on original alignment: -7129.043
+Iteration 260 / LogL: -7080.117 / Time: 0h:22m:32s (0h:4m:41s left)
+Iteration 270 / LogL: -7086.043 / Time: 0h:23m:23s (0h:3m:49s left)
+Iteration 280 / LogL: -7091.866 / Time: 0h:24m:17s (0h:2m:57s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 286: -7079.558
+Iteration 290 / LogL: -7093.468 / Time: 0h:25m:4s (0h:8m:19s left)
+Iteration 300 / LogL: -7085.104 / Time: 0h:25m:48s (0h:7m:25s left)
+Log-likelihood cutoff on original alignment: -7129.043
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.958
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+BETTER TREE FOUND at iteration 308: -7079.549
+Iteration 310 / LogL: -7086.781 / Time: 0h:26m:36s (0h:8m:26s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 320: -7079.525
+Iteration 320 / LogL: -7079.525 / Time: 0h:27m:33s (0h:8m:38s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 327: -7079.506
+Iteration 330 / LogL: -7087.894 / Time: 0h:28m:29s (0h:8m:24s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 331: -7079.478
+Iteration 340 / LogL: -7104.493 / Time: 0h:29m:23s (0h:7m:53s left)
+Iteration 350 / LogL: -7119.879 / Time: 0h:30m:5s (0h:6m:59s left)
+Log-likelihood cutoff on original alignment: -7129.043
+Iteration 360 / LogL: -7080.044 / Time: 0h:30m:54s (0h:6m:6s left)
+Iteration 370 / LogL: -7081.746 / Time: 0h:31m:41s (0h:5m:14s left)
+BETTER TREE FOUND at iteration 377: -7079.478
+Iteration 380 / LogL: -7080.879 / Time: 0h:32m:31s (0h:8m:19s left)
+Iteration 390 / LogL: -7079.520 / Time: 0h:33m:22s (0h:7m:27s left)
+Iteration 400 / LogL: -7091.914 / Time: 0h:34m:11s (0h:6m:35s left)
+Log-likelihood cutoff on original alignment: -7129.043
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.991
+BETTER TREE FOUND at iteration 410: -7079.471
+Iteration 410 / LogL: -7079.471 / Time: 0h:35m:5s (0h:8m:34s left)
+Iteration 420 / LogL: -7084.370 / Time: 0h:35m:51s (0h:7m:42s left)
+Iteration 430 / LogL: -7079.506 / Time: 0h:36m:40s (0h:6m:50s left)
+Iteration 440 / LogL: -7138.011 / Time: 0h:37m:25s (0h:5m:57s left)
+Iteration 450 / LogL: -7084.443 / Time: 0h:38m:15s (0h:5m:6s left)
+Log-likelihood cutoff on original alignment: -7129.043
+Iteration 460 / LogL: -7079.547 / Time: 0h:39m:10s (0h:4m:16s left)
+Iteration 470 / LogL: -7085.517 / Time: 0h:40m:0s (0h:3m:24s left)
+Iteration 480 / LogL: -7082.385 / Time: 0h:40m:52s (0h:2m:33s left)
+Iteration 490 / LogL: -7085.622 / Time: 0h:41m:38s (0h:1m:42s left)
+Iteration 500 / LogL: -7114.580 / Time: 0h:42m:28s (0h:0m:51s left)
+Log-likelihood cutoff on original alignment: -7129.043
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.992
+Iteration 510 / LogL: -7110.533 / Time: 0h:43m:27s (0h:7m:40s left)
+TREE SEARCH COMPLETED AFTER 511 ITERATIONS / Time: 0h:43m:33s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -7079.471
+Optimal log-likelihood: -7079.468
+Rate parameters:  A-C: 1.50341  A-G: 6.13269  A-T: 1.00000  C-G: 1.50341  C-T: 4.89693  G-T: 1.00000
+Base frequencies:  A: 0.243  C: 0.297  G: 0.158  T: 0.302
+Site proportion and rates:  (0.568,0.223) (0.337,1.153) (0.095,5.096)
+Parameters optimization took 1 rounds (0.672 sec)
+BEST SCORE FOUND : -7079.468
+
+Testing tree branches by SH-like aLRT with 1000 replicates...
+6.184 sec.
+Creating bootstrap support values...
+Split supports printed to NEXUS file Rockfish_Vetted_Seqs.Domains.Alignment.fasta.splits.nex
+Total tree length: 2.238
+
+Total number of iterations: 511
+CPU time used for tree search: 2551.960 sec (0h:42m:31s)
+Wall-clock time used for tree search: 2605.834 sec (0h:43m:25s)
+Total CPU time used: 2567.941 sec (0h:42m:47s)
+Total wall-clock time used: 2622.288 sec (0h:43m:42s)
+
+Computing bootstrap consensus tree...
+Reading input file Rockfish_Vetted_Seqs.Domains.Alignment.fasta.splits.nex...
+276 taxa and 11422 splits.
+Consensus tree written to Rockfish_Vetted_Seqs.Domains.Alignment.fasta.contree
+Reading input trees file Rockfish_Vetted_Seqs.Domains.Alignment.fasta.contree
+Log-likelihood of consensus tree: -7085.825
+
+Analysis results written to: 
+  IQ-TREE report:                Rockfish_Vetted_Seqs.Domains.Alignment.fasta.iqtree
+  Maximum-likelihood tree:       Rockfish_Vetted_Seqs.Domains.Alignment.fasta.treefile
+  Likelihood distances:          Rockfish_Vetted_Seqs.Domains.Alignment.fasta.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          Rockfish_Vetted_Seqs.Domains.Alignment.fasta.splits.nex
+  Consensus tree:                Rockfish_Vetted_Seqs.Domains.Alignment.fasta.contree
+  Screen log file:               Rockfish_Vetted_Seqs.Domains.Alignment.fasta.log
+
+Date and Time: Fri Jun 23 21:31:05 2023
