@@ -41,34 +41,80 @@ quit()
 # Clean up
 rm *ab1
 
-###############################
-# Clean reads with Trimmomatic
-###############################
+########################
+# Clean and merge reads
+########################
 
-# Concatenate fastq files
-cat *GluRF2.fastq > Rockfish_Forward_Reads.fq
-cat *CB3RF2.fastq > Rockfish_Reverse_Reads.fq
-# Reverse the reverse reads with seqtk
-seqtk seq -r Rockfish_Reverse_Reads.fq > Rockfish_Reverse_Reads.reversed.fq
-# Create final list
-cat Rockfish_Forward_Reads.fq Rockfish_Reverse_Reads.reversed.fq > Rockfish_Reads.fq
+# Create forward and reverse lists
+cat *GluRF2.fastq > forward.fq
+cat *CB3RF2.fastq > reverse.fq
+rm *fastq
 
-# Examine "Rockfish_Reads.fq" in FastQC
-	# remove reads with a quality score below 20
+# Remove primer labels from fastq headers
+gsed -i 's/-GluRF2//g' forward.fq
+gsed -i 's/-CB3RF2//g' reverse.fq
+
+# Pair forward and reverse reads with BBTools
+bbmerge.sh \
+qtrim=t \
+in1=forward.fq in2=reverse.fq \
+out=output_merged.fq
+
+	# 20 sequences merged
 	
-trimmomatic SE -phred33 Rockfish_Reads.fq \
-Rockfish_Reads.cleaned.fq \
-HEADCROP:10 LEADING:20 TRAILING:20 MINLEN:50
+# Convert sequences to fasta with seqtk, and reverse complement reverse reads
+seqtk seq -a forward.fq > forward.fa
+seqtk seq -ar reverse.fq > reverse.fa
+seqtk seq -a output_merged.fq > output_merged.fa
 
-# Results:
-	# Input Reads: 924 Surviving: 409 (44.26%) Dropped: 515 (55.74%)	#123 unique IDs
+# Removed merged reads from forward.fa & reverse.fa
+	# Created file "ids_to_remove.txt" with list of IDs from output_merged.fa
+seqkit grep -v -f ids_to_remove.txt forward.fa > forward.cleaned.fa
+seqkit grep -v -f ids_to_remove.txt reverse.fa > reverse.cleaned.fa
 
-# Convert to fasta with seqtk
-seqtk seq -a Rockfish_Reads.cleaned.fq > Rockfish_Reads.cleaned.fasta
+rm forward.fa
+rm reverse.fa
+rm ids_to_remove.txt
+
+# Combine all sequences
+cat *fa > output_all.fa
+
+############################################################################
+# keep only the longest sequence for each set of sequences with the same ID
+############################################################################
+
+python3
+from Bio import SeqIO
+
+def filter_longest_sequences(fasta_file):
+    # Read the FASTA file and store sequences by ID
+    sequences = {}
+    for record in SeqIO.parse(fasta_file, "fasta"):
+        seq_id = record.id
+        sequence = str(record.seq)
+        if seq_id in sequences:
+            # If sequence ID already exists, compare lengths and keep the longest
+            if len(sequence) > len(sequences[seq_id]):
+                sequences[seq_id] = sequence
+        else:
+            sequences[seq_id] = sequence
+    # Write the filtered sequences to a new FASTA file
+    output_file = "Rockfish_filtered.fasta"
+    with open(output_file, "w") as f:
+        for seq_id, sequence in sequences.items():
+            f.write(f">{seq_id}\n{sequence}\n")
+    print(f"Filtered sequences written to {output_file}.")
+
+# Usage example
+fasta_file = "output_all.fa"
+filter_longest_sequences(fasta_file)
+
+# Quit Python3
+quit()
 
 
 # Clean up
-rm *fastq
+rm *fa
 rm *.fq
 
 ################################################
@@ -158,31 +204,26 @@ output_dir = "temp"
 # Iterate over the species list
 for species_name in species_list:
     print(f"Retrieving CytB gene sequence for {species_name}...")
-    
     try:
         # Search NCBI Nucleotide database for the species and CytB gene
         search_term = f"{species_name}[Organism] AND cytb[gene]"
         handle = Entrez.esearch(db="nucleotide", term=search_term, retmax=1)
         record = Entrez.read(handle)
-        handle.close()
-        
+        handle.close()       
         # Retrieve the sequence for the top result
         if record["IdList"]:
             sequence_id = record["IdList"][0]
             handle = Entrez.efetch(db="nucleotide", id=sequence_id, rettype="fasta", retmode="text")
             sequence = SeqIO.read(handle, "fasta")
-            handle.close()
-            
+            handle.close()          
             # Save the sequence to a FASTA file
             file_path = f"{output_dir}/{species_name.replace(' ', '_')}.fasta"
-            SeqIO.write(sequence, file_path, "fasta")
-            
+            SeqIO.write(sequence, file_path, "fasta")            
             print(f"CytB gene sequence for {species_name} retrieved and saved.")
             print("")
         else:
             print(f"No CytB gene sequence found for {species_name}.")
-            print("")
-    
+            print("")   
     except Exception as e:
         print(f"An error occurred while retrieving CytB gene sequence for {species_name}:")
         print(str(e))
@@ -211,7 +252,7 @@ done
 cat *.fasta > Known_Seqs.fasta
 mv Known_Seqs.fasta ../Known_Seqs.fasta
 cd ../
-cat Known_Seqs.fasta Rockfish_Reads.cleaned.fasta > All_Reads.fasta
+cat Known_Seqs.fasta Rockfish_filtered.fasta > All_Reads.fasta
 
 # Clean up
 rm -r temp
@@ -220,8 +261,8 @@ rm -r temp
 # Identify CytB sequences using BLAST and SAMTOOLS
 ###################################################
  
-# Extract the first Sebastes sequence (150-GluRF2) as a query
-samtools faidx All_Reads.fasta 150-GluRF2 > query.fasta
+# Extract the first Sebastes sequence (150) as a query
+samtools faidx All_Reads.fasta 150 > query.fasta
 
 # Make BLAST database
 makeblastdb -in All_Reads.fasta -dbtype nucl -out All_Reads
@@ -250,9 +291,6 @@ cat temp.other_reads.fasta temp.reversed.fasta > Rockfish_Vetted_Seqs.fasta
 rm All_Reads*
 rm temp*
 
-# Extract 
-# Align reads and make initial tree
-
 ############################
 # Extract conserved regions
 ############################
@@ -268,6 +306,14 @@ xargs samtools faidx Rockfish_Vetted_Seqs.fasta < temp3.txt > Rockfish_Vetted_Se
 # Clean up 
 rm temp*
 
+#############################################
+# Add final sequences, align, and build tree
+#############################################
+
+# Several species were lost during QC (S.chrysomelas and S.carnatus) or severley truncated (S.atrovirens and S.ruberrimus)
+	# Sequences were manually added back in by using NCBI BLAST with query "Sebastes_rosenblatti-AF031511.1:24-828" from file "Rockfish_Vetted_Seqs.Domains.fasta"
+	# Also added a few more outgroups by using NCBI BLAST with query "Sebastes_rosenblatti-AF031511.1:24-828" and database "NOT Sebastes"
+
+
 muscle -in Rockfish_Vetted_Seqs.Domains.fasta -out Rockfish_Vetted_Seqs.Domains.Alignment.fasta
 iqtree -s Rockfish_Vetted_Seqs.Domains.Alignment.fasta -alrt 1000 -bb 1000 
-
